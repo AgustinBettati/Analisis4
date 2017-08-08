@@ -23,6 +23,7 @@ def pi_gauss_legendre():
         if abs(a - b) < 0.00001:
             return math.pow(a + b, 2) / (4 * t)
 
+
 print(pi_gauss_legendre())
 
 
@@ -36,16 +37,16 @@ def decimal_pi_gauss_legendre():
     while True:
         x = Decimal((a + b) / Decimal(2.0))
         y = Decimal(math.sqrt(a * b))
-        t = t - p * ((a - x)**Decimal(2))
+        t = t - p * ((a - x) ** Decimal(2))
         a = x
         b = y
         p = 2 * p
 
-        if abs(a - b) < 0.000000000000000000000000001:
-            return Decimal( (a + b)**Decimal(2) / Decimal(4 * t))
+        if abs(a - b) < 1e-27:
+            return Decimal((a + b) ** Decimal(2) / Decimal(4 * t))
+
 
 print(decimal_pi_gauss_legendre())
-
 
 
 # Spigot algorithm for n digits.
@@ -65,5 +66,5 @@ def pi_spigot(amt_of_digits):
 
     return pi
 
-print(pi_spigot(100))
 
+print(pi_spigot(100))
