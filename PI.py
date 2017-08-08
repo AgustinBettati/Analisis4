@@ -5,7 +5,7 @@ from decimal import Decimal
 print(Decimal(math.pi))
 
 
-# Second method, obtained through Gauss-Legendre algorithm using float primitive type
+# Gauss-Legendre algorithm using float primitive type
 def pi_gauss_legendre():
     a = 1.0
     b = 1 / math.sqrt(2)
@@ -47,4 +47,23 @@ def decimal_pi_gauss_legendre():
 print(decimal_pi_gauss_legendre())
 
 
+
+# Spigot algorithm for n digits.
+def pi_spigot(amt_of_digits):
+    pi = ""
+    k, a, b, a1, b1 = 2, 4, 1, 12, 4
+    while amt_of_digits > 0:
+        p, q, k = k * k, 2 * k + 1, k + 1
+        a, b, a1, b1 = a1, b1, p * a + q * a1, p * b + q * b1
+        d, d1 = a / b, a1 / b1
+        while d == d1 and amt_of_digits > 0:
+            if len(pi) == 1: pi += "."
+            pi += str(int(d))
+            amt_of_digits -= 1
+            a, a1 = 10 * (a % b), 10 * (a1 % b1)
+            d, d1 = a / b, a1 / b1
+
+    return pi
+
+print(pi_spigot(100))
 
