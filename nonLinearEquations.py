@@ -1,18 +1,19 @@
 import math
-def newton_raphson(x,f, derivativef, cota,max, iteratation):
+
+def newton_raphson(x, f, derivativef, cota, max, iteration):
     newX = x - (f(x)/derivativef(x))
-    if (iteratation == max or (abs(x-newX) < cota)):
+    if iteration == max or abs(x-newX) < cota:
         return newX
 
-    return newton_raphson(newX,f,derivativef,cota, max, (iteratation+1))
+    return newton_raphson(newX, f, derivativef, cota, max, (iteration + 1))
 
 
 
 def normal_function(x):
-    return x - math.pow(math.e,-x)
+    return math.pow(x,2) -3
 
 def derivative_function(x):
-    return 1 + math.pow(math.e,-x)
+    return 2*x
 
 
-print(newton_raphson(0, normal_function, derivative_function, 0.0003, 10, 0))
+print(newton_raphson(2, normal_function, derivative_function, 0.00001, 100, 0))
