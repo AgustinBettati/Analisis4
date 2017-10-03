@@ -6,5 +6,12 @@ reader = csv.reader(file)
 
 next(reader)  # reader es un iterable de las rows del csv
 
+altura = []
+latitud = []
+longitud =[]
+
 for row in reader:
-    print("Altura: " + row[0] + " , Latitud: " + row[1] + " , Longitud: " + row[2])
+    altura.append(row[0])
+    latitud.append(row[1])
+    longitud.append(row[2])
+
