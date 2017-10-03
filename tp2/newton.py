@@ -32,5 +32,6 @@ def eval(a, x, r):
 
 
 print ( coef(np.arange(10,15,1),np.arange(35,40,1) ) )
-
 # print( eval( coef(np.arange(4,6,1),np.arange(4,6,1)) ,np.arange(4,6,1), 5.5) )
+
+print( eval( coef(np.arange(10,15,1),np.arange(35,40,1) ) ,np.arange(10,15,1), 5.5) )

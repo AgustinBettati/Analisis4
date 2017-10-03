@@ -25,7 +25,7 @@ def coef(x, y):
         result[k] -= s
 
         for j in range(0,k, 1):
-            result /= (x[k] - x[j])
+            result[k] /= (x[k] - x[j])
 
     return np.array(result) # return an array of coefficient
 
@@ -38,13 +38,16 @@ def eval(a, x, r):
     x.astype(float)
     n = len(a)
     temp = a[0]
+    multiplicadora = 0
     for i in range(1 , n, 1):
         multiplicadora = a[i]
         for j in range(0, i,1):
             multiplicadora *= (r - x[j])
 
+        temp += multiplicadora
+
     return temp # return the y_value interpolation
 
 print ( coef(np.arange(10,15,1),np.arange(35,40,1) ) )
 
-# print( eval( coef(np.arange(4,6,1),np.arange(4,6,1)) ,np.arange(4,6,1), 5.5) )
+print( eval( coef(np.arange(10,15,1),np.arange(35,40,1) ) ,np.arange(10,15,1), 5.5) )
