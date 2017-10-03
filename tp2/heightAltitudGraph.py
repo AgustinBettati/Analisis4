@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
 
-
 file = open("resource/geo_pos.csv", 'r')
 
 reader = csv.reader(file)
