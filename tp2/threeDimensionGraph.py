@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
 
 file = open("resource/interpolation.csv", 'r')
 
