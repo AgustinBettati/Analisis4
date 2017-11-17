@@ -1,9 +1,9 @@
 import csv
 import numpy as np
 
-from tp2.newton import coef
+from tp2.newtonFormula import coef
 
-from tp2.newton import eval
+from tp2.newtonFormula import eval
 
 file = open("resource/geo_pos.csv", 'r')  # read only
 
