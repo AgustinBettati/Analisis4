@@ -60,7 +60,6 @@ coefLong3 = coef(np.array(altura3), np.array(longitud3))
 coefLong4 = coef(np.array(altura4), np.array(longitud4))
 
 file = open("resource/interpolation.csv", "w")
-writer = csv.writer(file, delimiter=",", quoting=csv.QUOTE_NONE)
 
 file.write("Altura,Latitud,Longitud\n")
 
@@ -95,5 +94,3 @@ for i in range(9000, 10001, 1):
     file.write(",")
     file.write(str(eval(np.array(coefLong4), np.array(altura4), 10000 - i)))
     file.write("\n")
-
-
